@@ -1,0 +1,25 @@
+{
+  "_설명": "숫자를 바꾸면 다음 실행부터 반영됩니다. 비율은 0.15 = 15%.",
+  "tick_seconds": 60,
+  "idle_tick_seconds": 300,
+  "max_quote_age_sec": 1200,
+  "port": 8800,
+  "fee_rate": 0.001,
+  "cash_band": {"fear": [0.20, 0.35], "caution": [0.15, 0.25], "calm": [0.10, 0.20]},
+  "min_tech_share": 0.70,
+  "max_weight_large": 0.15,
+  "max_weight_small": 0.07,
+  "btc_target": 0.03,
+  "target_holdings": 12,
+  "tranches": 3,
+  "buy_min_score": 62,
+  "thesis_break_score": 42,
+  "emergency_keep_score": 58,
+  "no_chase_pct": 8.0,
+  "max_trades_per_day": 6,
+  "min_gap_sec": 600,
+  "target_pct": 25,
+  "avoid": {
+    "NVDA": "2026-11-20 SEC 회계 조사 보도. 결론 전까지 신규 매수 금지(원칙 195·255)"
+  }
+}

@@ -1,0 +1,58 @@
+name: AI 펀드 실시간 모의투자
+
+on:
+  schedule:
+    # 한국장 (KST 09:00~15:30 = UTC 00:00~06:30), 평일 10분마다
+    - cron: "*/10 0-6 * * 1-5"
+    # 미국장 (뉴욕 09:30~16:00, 서머타임 포함 UTC 13:30~21:00), 평일 10분마다
+    - cron: "*/10 13-21 * * 1-5"
+    # 그 밖의 시간: 비트코인·대시보드 갱신용 2시간마다
+    - cron: "23 */2 * * *"
+  workflow_dispatch: {}
+  push:
+    paths: ["data/selection.json", "config.json"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: fund
+  cancel-in-progress: false
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 원칙에 따라 한 번 점검·매매
+        run: python app.py --once
+      - name: 운용 기록 저장
+        run: |
+          git config user.name "ai-fund-bot"
+          git config user.email "ai-fund-bot@users.noreply.github.com"
+          git add data/portfolio.json data/fundamentals_cache.json data/selection.json
+          git diff --cached --quiet || git commit -m "운용 기록 $(TZ=Asia/Seoul date '+%m/%d %H:%M')"
+          git pull --rebase -X ours origin ${{ github.ref_name }} || true
+          git push || true
+      - name: 대시보드 만들기
+        run: |
+          mkdir -p _site/data
+          cp static/index.html _site/
+          cp data/portfolio.json data/principles.json data/selection.json _site/data/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
