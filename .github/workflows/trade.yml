@@ -10,7 +10,7 @@ on:
     - cron: "23 */2 * * *"
   workflow_dispatch: {}
   push:
-    paths: ["data/selection.json", "config.json"]
+    paths: ["data/selection.json", "config.json", ".github/workflows/trade.yml"]
 
 permissions:
   contents: write
