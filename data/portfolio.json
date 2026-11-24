@@ -5,59 +5,194 @@
   "start_capital": 10000000,
   "base": "KRW",
   "fee_rate": 0.001,
-  "updated_at": "2026-11-23T23:50:00+09:00",
-  "day": 1,
-  "next_run": "장 중 매시간 (한국장 09:47~15:47 · 미국장 현지 09:47~16:47)",
+  "updated_at": "2026-11-24T23:12:08+09:00",
+  "day": 2,
+  "next_run": "장중 약 10분마다 자동 점검 (GitHub 서버)",
   "asof": {
-   "us": "미국 11/20(금) 종가",
-   "kr": "한국 11/23(월) 종가",
-   "fx": "원/달러 1,345.9원 (11/23 15:30)",
-   "btc": "BTC 63,442.8달러 (11/23 22:58)"
+   "feed": "시세: 야후 파이낸스 실시간 시세",
+   "tick": "마지막 점검 11/24 23:12:08",
+   "fx": "원/달러 1,343.2원"
   },
-  "mode": "시간별 점검",
-  "philosophy": "공격적 성장 투자형 · 장기 성장과 복리 · 기술 혁신 기업 중심"
+  "mode": "실시간",
+  "philosophy": "공격적 성장 투자형 · 장기 성장과 복리 · 기술 혁신 기업 중심",
+  "selected": 129,
+  "sel_list": [
+   "000270",
+   "000660",
+   "003230",
+   "005930",
+   "007660",
+   "035720",
+   "042700",
+   "051910",
+   "066570",
+   "089030",
+   "168360",
+   "196170",
+   "247540",
+   "AAPL",
+   "ACHR",
+   "ADBE",
+   "AEYE",
+   "AI",
+   "AMZN",
+   "ARBE",
+   "ARM",
+   "ASML",
+   "ASTS",
+   "AVGO",
+   "BA",
+   "BABA",
+   "BAC",
+   "BBAI",
+   "BE",
+   "BEAM",
+   "BEPC",
+   "BIDU",
+   "BKNG",
+   "BKSY",
+   "BRK.B",
+   "BTC",
+   "BYDDY",
+   "BYND",
+   "CCJ",
+   "CMCSA",
+   "COST",
+   "CRSP",
+   "CVX",
+   "CXAI",
+   "DAL",
+   "DDD",
+   "ENPH",
+   "EVLV",
+   "F",
+   "FDX",
+   "FIVN",
+   "FSLR",
+   "GE",
+   "GLBE",
+   "GLOB",
+   "GM",
+   "GNSS",
+   "GOOGL",
+   "HOOD",
+   "HPQ",
+   "IBM",
+   "INTC",
+   "IONQ",
+   "ISRG",
+   "JNJ",
+   "JPM",
+   "KB",
+   "KO",
+   "LHX",
+   "LLY",
+   "LMT",
+   "LTRN",
+   "LUNR",
+   "MA",
+   "MBOT",
+   "MCD",
+   "MDT",
+   "META",
+   "MSFT",
+   "MTLS",
+   "MU",
+   "NEE",
+   "NFLX",
+   "NIO",
+   "NKE",
+   "NNDM",
+   "NOC",
+   "NTLA",
+   "NVDA",
+   "OSIS",
+   "PATH",
+   "PEP",
+   "PFE",
+   "PLTR",
+   "PLUG",
+   "PRCT",
+   "PRLB",
+   "PYPL",
+   "QBTS",
+   "QCOM",
+   "QS",
+   "QUBT",
+   "RGTI",
+   "RKLB",
+   "RXRX",
+   "SBUX",
+   "SEDG",
+   "SERV",
+   "SOUN",
+   "SPCX",
+   "SSYS",
+   "STEM",
+   "SYM",
+   "T",
+   "TDOC",
+   "TEM",
+   "TSLA",
+   "UBER",
+   "UNH",
+   "UPS",
+   "UPST",
+   "V",
+   "VRTX",
+   "VSAT",
+   "VZ",
+   "WFC",
+   "WMT",
+   "XOM",
+   "YRD"
+  ],
+  "custom": [],
+  "host": "actions",
+  "feed": "야후 파이낸스 실시간 시세",
+  "demo": false
  },
  "market": {
-  "regime": "극단적 공포",
-  "score": 12,
-  "headline": "AI 거품 공포가 미국·한국 증시를 동시에 덮쳤다. 1차로 45%만 사고 현금 55%를 남긴다.",
-  "summary": "S&P 500은 7거래일 연속 하락해 한 주에 8.6% 빠졌고, 엔비디아가 SEC 회계 조사 보도로 하루 14% 급락했다. 코스피도 11/23 장중 5%대 급락 끝에 3.31% 내린 4,708.54로 마감했다. 이런 투매 국면에서는 바닥을 맞히려 하기보다 나눠 사는 편이 낫다고 판단했다. 첫날은 이익 기반이 탄탄한데 많이 빠진 종목(알파벳·마이크로소프트·삼성전자)과 하락장 방어 종목(버크셔·코카콜라)을 반씩 섞고, 비트코인은 소액만 담았다. 엔비디아는 조사 결과가 나오기 전까지 피한다.",
+  "regime": "경계",
+  "score": 41,
+  "headline": "주식시장 휴장 실시간 운용 중 — VIX 29.6, 경계 국면. 현금 목표 15~25%, 지금 55%.",
+  "summary": "원칙 점수 상위 종목: 엔비디아 100점, 브로드컴 100점, ASML 100점, 마이크론 100점, 팔란티어 100점. 점수는 매출 성장·영업이익률·잉여현금흐름·부채·밸류에이션(PEG)에 선호 산업 가중치를 더해 계산한다. 주가 하락만으로는 사지 않고, 당일 8% 넘게 급등한 종목은 추격하지 않는다.",
   "indicators": [
    {
     "k": "S&P 500",
-    "v": "6,910.39",
-    "c": -3.7,
-    "d": "11/20 종가"
+    "v": "7,236.85",
+    "c": 4.6,
+    "d": "실시간"
    },
    {
     "k": "나스닥 종합",
-    "v": "22,617.73",
-    "c": -5.28,
-    "d": "11/20 종가"
+    "v": "24,092.36",
+    "c": 6.36,
+    "d": "실시간"
    },
    {
     "k": "코스피",
-    "v": "4,708.54",
-    "c": -3.31,
-    "d": "11/23 종가"
+    "v": "5,038.81",
+    "c": 0.1,
+    "d": "실시간"
    },
    {
     "k": "VIX 공포지수",
-    "v": "35.89",
-    "c": 26.2,
-    "d": "11/20"
+    "v": "29.59",
+    "c": 11.2,
+    "d": "실시간"
    },
    {
     "k": "원/달러",
-    "v": "1,345.9원",
-    "c": 0.73,
-    "d": "11/23 15:30"
+    "v": "1,343.2원",
+    "c": 0.07,
+    "d": "실시간"
    },
    {
     "k": "비트코인",
-    "v": "$63,443",
-    "c": 4.38,
-    "d": "24시간"
+    "v": "$60,261",
+    "c": -0.07,
+    "d": "실시간"
    }
   ]
  },
@@ -75,6 +210,15 @@
    "kospi": 4708.54,
    "spx": 6910.39,
    "ndx": 22617.73
+  },
+  {
+   "date": "2026-11-24",
+   "equity": 10118713,
+   "cash": 5535510,
+   "invested": 4583203,
+   "kospi": 5038.81005859375,
+   "spx": 7236.85009765625,
+   "ndx": 24092.359375
   }
  ],
  "positions": [
@@ -85,15 +229,17 @@
    "ccy": "USD",
    "qty": 3,
    "avg": 265.29,
-   "px": 265.29,
-   "fx": 1345.9,
+   "px": 282.31,
+   "fx": 1343.219970703125,
    "cost_krw": 1072233,
-   "value_krw": 1071161,
+   "value_krw": 1137613,
    "opened": "2026-11-23",
    "stop_pct": -25,
    "target_pct": 18,
    "thesis": "한 달 새 17% 넘게 빠져 52주 최저가(264.22달러) 바로 위에서 마감했고 RSI가 27.7로 과매도 구간에 들어왔다. 검색·클라우드·유튜브로 현금을 버는 회사라 AI 거품 논란의 직격탄을 맞은 순수 AI 칩주보다 이익 바닥이 단단하다고 판단했다. 다만 바닥 확인 전이므로 목표 비중(약 18%)의 절반 남짓만 1차로 담았다.",
-   "weight": 10.72
+   "weight": 11.24,
+   "day_pct": 6.26,
+   "score": 85.9
   },
   {
    "t": "MSFT",
@@ -102,15 +248,17 @@
    "ccy": "USD",
    "qty": 1,
    "avg": 484.52,
-   "px": 484.52,
-   "fx": 1345.9,
+   "px": 492.97,
+   "fx": 1343.219970703125,
    "cost_krw": 652768,
-   "value_krw": 652115,
+   "value_krw": 662167,
    "opened": "2026-11-23",
    "stop_pct": -25,
    "target_pct": 15,
    "thesis": "11월 4일 사상 최고가(555.80달러) 대비 약 13% 하락했다. 11월 18일 엔비디아·앤트로픽과 Azure 협력을 발표했고, 11/20 미즈호와 UBS가 매수 의견을 유지했다. 월요일 프리마켓에서 3%대 반등 조짐이 보였지만 추격하지 않고 직전 종가 기준으로 1주만 편입했다.",
-   "weight": 6.52
+   "weight": 6.54,
+   "day_pct": 1.64,
+   "score": 88.1
   },
   {
    "t": "BRK.B",
@@ -119,15 +267,17 @@
    "ccy": "USD",
    "qty": 1,
    "avg": 570.0,
-   "px": 570.0,
-   "fx": 1345.9,
+   "px": 572.94,
+   "fx": 1343.219970703125,
    "cost_krw": 767930,
-   "value_krw": 767163,
+   "value_krw": 769584,
    "opened": "2026-11-23",
    "stop_pct": -25,
    "target_pct": 8,
    "thesis": "시장이 무너진 주간에도 하락폭이 작았고(베타 0.57) 올해 13%대 상승을 지키고 있다. 막대한 현금을 쥔 보험·지주 회사라 하락장에서 포트폴리오의 완충재 역할을 맡긴다. 11/20 아거스가 목표가 도달로 매도가 아닌 '보유'로 낮춘 점은 상승 여력이 크지 않다는 신호라 비중은 8% 안팎으로 묶었다.",
-   "weight": 7.68
+   "weight": 7.61,
+   "day_pct": 0.46,
+   "score": 62.9
   },
   {
    "t": "KO",
@@ -136,15 +286,17 @@
    "ccy": "USD",
    "qty": 6,
    "avg": 96.99,
-   "px": 96.99,
-   "fx": 1345.9,
+   "px": 95.98,
+   "fx": 1343.219970703125,
    "cost_krw": 784016,
-   "value_krw": 783233,
+   "value_krw": 773534,
    "opened": "2026-11-23",
    "stop_pct": -25,
    "target_pct": 8,
    "thesis": "나스닥이 5% 넘게 빠진 11/20에도 0.94% 올랐다(베타 0.27). 경기와 상관없이 팔리는 필수소비재로, 12월 1일 배당락(주당 0.53달러) 일정도 있다. 수익을 내기보다 계좌 변동성을 줄이려는 목적의 편입이다. 선행 PER 약 28배로 싸지는 않아 비중을 8% 이하로 제한했다.",
-   "weight": 7.84
+   "weight": 7.64,
+   "day_pct": -1.05,
+   "score": 44.0
   },
   {
    "t": "005930",
@@ -153,15 +305,17 @@
    "ccy": "KRW",
    "qty": 5,
    "avg": 177500,
-   "px": 177500,
+   "px": 191400.0,
    "fx": 1.0,
    "cost_krw": 888388,
-   "value_krw": 887500,
+   "value_krw": 957000,
    "opened": "2026-11-23",
    "stop_pct": -25,
    "target_pct": 20,
    "thesis": "11/23 3.06% 내린 17만7,500원으로 마감해 235일 만에 17만원대로 내려왔다. 11월 11일 종가(20만8,000원)보다 14.7% 낮고, 추정 PER이 3.87배 수준이다. 반도체 업황 자체가 아니라 미국발 AI 투매에 끌려 내려간 측면이 크다고 보고 5주를 1차로 샀다. SK하이닉스는 1주 가격이 계좌의 10%를 넘어 이번에는 관찰로 둔다.",
-   "weight": 8.88
+   "weight": 9.46,
+   "day_pct": -0.05,
+   "score": 100
   },
   {
    "t": "BTC",
@@ -170,15 +324,16 @@
    "ccy": "USD",
    "qty": 0.0035,
    "avg": 63442.8,
-   "px": 63442.8,
-   "fx": 1345.9,
+   "px": 60261.2812,
+   "fx": 1343.219970703125,
    "cost_krw": 299156,
-   "value_krw": 298857,
+   "value_krw": 283305,
    "opened": "2026-11-23",
    "stop_pct": -30,
    "target_pct": 25,
    "thesis": "주말에 5만5천달러 선까지 밀린 뒤 6만3천달러대로 반등했고, 공포·탐욕 지수는 11(극단적 공포)이다. 사상 최고가 대비 절반 수준이라 역발상 소액 편입을 하되, 변동성이 주식의 몇 배라 계좌의 3% 이내로만 담는다.",
-   "weight": 2.99
+   "weight": 2.8,
+   "day_pct": -0.07
   }
  ],
  "trades": [
@@ -347,30 +502,50 @@
      "t": "^GSPC",
      "name": "S&P 500",
      "status": "지표",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false,
      "note": "11/20 6,910.39(-3.70%), 7거래일 연속 하락, 고점 대비 10% 넘게 내려 조정 국면."
     },
     {
      "t": "^IXIC",
      "name": "나스닥 종합",
      "status": "지표",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false,
      "note": "11/20 22,617.73(-5.28%), 2026년 상승분을 모두 반납."
     },
     {
      "t": "^NDX",
      "name": "나스닥 100",
      "status": "지표",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false,
      "note": "11/20 25,028.98(-5.61%), 장중 고점 대비 20% 하락 터치."
     },
     {
      "t": "^KS11",
      "name": "코스피",
      "status": "지표",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false,
      "note": "11/23 4,708.54(-3.31%), 장중 5%대 급락으로 매도 사이드카 발동 뒤 일부 회복."
     },
     {
      "t": "BTC",
      "name": "비트코인",
-     "status": "보유"
+     "status": "보유",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false
     }
    ]
   },
@@ -380,38 +555,72 @@
     {
      "t": "AAPL",
      "name": "애플",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 79점 (매출성장 12% · 영업이익률 33% · 선행PER 33)"
     },
     {
      "t": "GOOGL",
      "name": "알파벳",
-     "status": "보유"
+     "status": "보유",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 86점 (매출성장 25% · 영업이익률 33% · 선행PER 18) · 현재가 282.31"
     },
     {
      "t": "MSFT",
      "name": "마이크로소프트",
-     "status": "보유"
+     "status": "보유",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 88점 (매출성장 19% · 영업이익률 47% · 선행PER 20) · 현재가 492.97"
     },
     {
      "t": "NVDA",
      "name": "엔비디아",
      "status": "회피",
-     "note": "11/20 SEC 회계 조사 보도로 하루 -14.0%(125.53달러). 조사 결과가 나오기 전까지 신규 매수 금지."
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "2026-11-20 SEC 회계 조사 보도. 결론 전까지 신규 매수 금지(원칙 195·255)"
     },
     {
      "t": "AMZN",
      "name": "아마존",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 71점 (매출성장 12% · 영업이익률 13% · 선행PER 23)"
     },
     {
      "t": "META",
      "name": "메타",
-     "status": "중립"
+     "status": "관찰",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 96점 (매출성장 26% · 영업이익률 38% · 선행PER 17)"
     },
     {
      "t": "TSLA",
      "name": "테슬라",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 57점 (매출성장 -0% · 영업이익률 3% · 선행PER 179)"
     }
    ]
   },
@@ -421,37 +630,71 @@
     {
      "t": "AVGO",
      "name": "브로드컴",
-     "status": "중립"
+     "status": "관찰",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 100점 (매출성장 86% · 영업이익률 49% · 선행PER 16)"
     },
     {
      "t": "ASML",
      "name": "ASML",
-     "status": "중립"
+     "status": "관찰",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 100점 (매출성장 55% · 영업이익률 39% · 선행PER 22)"
     },
     {
      "t": "ARM",
      "name": "Arm",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 77점 (매출성장 27% · 영업이익률 17% · 선행PER 57)"
     },
     {
      "t": "QCOM",
      "name": "퀄컴",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 60점 (매출성장 -8% · 영업이익률 21% · 선행PER 14)"
     },
     {
      "t": "INTC",
      "name": "인텔",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 71점 (매출성장 21% · 영업이익률 10% · 선행PER 33)"
     },
     {
      "t": "MU",
      "name": "마이크론",
-     "status": "중립"
+     "status": "관찰",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 100점 (매출성장 379% · 영업이익률 75% · 선행PER 3)"
     },
     {
      "t": "TPE:2330",
      "name": "TSMC",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": true,
+     "custom": false
     }
    ]
   },
@@ -461,57 +704,112 @@
     {
      "t": "PLTR",
      "name": "팔란티어",
-     "status": "중립"
+     "status": "관찰",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 100점 (매출성장 96% · 영업이익률 46% · 선행PER 63)"
     },
     {
      "t": "NFLX",
      "name": "넷플릭스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 76점 (매출성장 12% · 영업이익률 31% · 선행PER 15)"
     },
     {
      "t": "ADBE",
      "name": "어도비",
-     "status": "중립"
+     "status": "관찰",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 93점 (매출성장 13% · 영업이익률 36% · 선행PER 8)"
     },
     {
      "t": "PATH",
      "name": "유아이패스",
-     "status": "중립"
+     "status": "관찰",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 87점 (매출성장 13% · 영업이익률 9% · 선행PER 13)"
     },
     {
      "t": "AI",
      "name": "C3.ai",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 54점 (매출성장 -26% · 영업이익률 -198%)"
     },
     {
      "t": "UPST",
      "name": "업스타트",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 78점 (매출성장 34% · 영업이익률 8% · 선행PER 6)"
     },
     {
      "t": "SOUN",
      "name": "사운드하운드",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 67점 (매출성장 48% · 영업이익률 -91%)"
     },
     {
      "t": "AEYE",
      "name": "AEye",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 68점 (매출성장 7% · 영업이익률 -5% · 선행PER 10)"
     },
     {
      "t": "FIVN",
      "name": "Five9",
-     "status": "중립"
+     "status": "관찰",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 84점 (매출성장 13% · 영업이익률 6% · 선행PER 7)"
     },
     {
      "t": "BBAI",
      "name": "빅베어AI",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 55점 (매출성장 32% · 영업이익률 -63%)"
     },
     {
      "t": "YRD",
-     "name": "412 Yiren Digital",
-     "status": "중립"
+     "name": "Yiren Digital",
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 56점 (매출성장 -46% · 영업이익률 19%)"
     }
    ]
   },
@@ -521,22 +819,42 @@
     {
      "t": "IONQ",
      "name": "아이온큐",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 59점 (매출성장 336% · 영업이익률 -306%)"
     },
     {
      "t": "QBTS",
      "name": "D-Wave",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 47점 (매출성장 21% · 영업이익률 -1487%)"
     },
     {
      "t": "RGTI",
      "name": "리게티",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 35점 (매출성장 -28% · 영업이익률 -857%)"
     },
     {
      "t": "QUBT",
      "name": "퀀텀 컴퓨팅",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 59점 (매출성장 2374% · 영업이익률 -454%)"
     }
    ]
   },
@@ -546,103 +864,199 @@
     {
      "t": "BRK.B",
      "name": "버크셔 해서웨이 B",
-     "status": "보유"
+     "status": "보유",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 63점 (매출성장 11% · 영업이익률 27% · 선행PER 25) · 현재가 572.94"
     },
     {
      "t": "JNJ",
      "name": "존슨앤드존슨",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 53점 (매출성장 6% · 영업이익률 27% · 선행PER 23)"
     },
     {
      "t": "LLY",
      "name": "일라이 릴리",
      "status": "관찰",
-     "note": "11/20 1,347.11달러로 하락장에서도 버팀. 다만 1주가 계좌의 약 18%라 비중 한도(12%) 초과로 보류."
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 97점 (매출성장 39% · 영업이익률 51% · 선행PER 27)"
     },
     {
      "t": "UNH",
      "name": "유나이티드헬스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 37점 (매출성장 -0% · 영업이익률 6% · 선행PER 14)"
     },
     {
      "t": "PFE",
      "name": "화이자",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 48점 (매출성장 -0% · 영업이익률 29% · 선행PER 9)"
     },
     {
      "t": "ETR:MRK",
      "name": "머크 KGaA",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false
     },
     {
      "t": "MDT",
      "name": "메드트로닉",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 65점 (매출성장 14% · 영업이익률 20% · 선행PER 16)"
     },
     {
      "t": "CPH:NOVO-B",
      "name": "노보 노디스크",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": true,
+     "custom": false
     },
     {
      "t": "LON:AZN",
      "name": "아스트라제네카",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false
     },
     {
      "t": "CRSP",
      "name": "크리스퍼",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 65점 (매출성장 1325% · 영업이익률 -2059%)"
     },
     {
      "t": "NTLA",
      "name": "인텔리아",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 41점 (매출성장 -48% · 영업이익률 -826%)"
     },
     {
      "t": "BEAM",
      "name": "빔 테라퓨틱스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 41점 (매출성장 -97% · 영업이익률 -268%)"
     },
     {
      "t": "RXRX",
      "name": "리커전",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 65점 (매출성장 258% · 영업이익률 -734%)"
     },
     {
      "t": "VRTX",
      "name": "버텍스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 82점 (매출성장 12% · 영업이익률 38% · 선행PER 27)"
     },
     {
      "t": "TEM",
      "name": "템퍼스 AI",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (매출성장 23% · 영업이익률 -18%)"
     },
     {
      "t": "ISRG",
      "name": "인튜이티브 서지컬",
-     "status": "중립"
+     "status": "관찰",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 88점 (매출성장 22% · 영업이익률 32% · 선행PER 33)"
     },
     {
      "t": "PRCT",
      "name": "프로셉트",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 56점 (매출성장 18% · 영업이익률 -35%)"
     },
     {
      "t": "MBOT",
      "name": "마이크로봇",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 42점 (영업이익률 -5057%)"
     },
     {
      "t": "LTRN",
      "name": "랜턴 파마",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 46점 (영업이익률 0%)"
     },
     {
      "t": "TDOC",
      "name": "텔라닥",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 55점 (매출성장 -3% · 영업이익률 -5%)"
     }
    ]
   },
@@ -652,68 +1066,132 @@
     {
      "t": "005930",
      "name": "삼성전자",
-     "status": "보유"
+     "status": "보유",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 100점 (매출성장 127% · 영업이익률 46% · 선행PER 2) · 현재가 191,400.00"
     },
     {
      "t": "000660",
      "name": "SK하이닉스",
      "status": "관찰",
-     "note": "11/23 108만5,000원. 1주가 계좌의 10%를 넘고 100만원 지지 여부가 관건. 지지 확인 시 편입 후보 1순위."
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 92점 (매출성장 328% · 영업이익률 74% · 선행PER 2)"
     },
     {
      "t": "066570",
      "name": "LG전자",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 61점 (매출성장 9% · 영업이익률 4% · 선행PER 9)"
     },
     {
      "t": "051910",
      "name": "LG화학",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 48점 (매출성장 34% · 영업이익률 -2% · 선행PER 10)"
     },
     {
      "t": "000270",
      "name": "기아",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 57점 (매출성장 13% · 영업이익률 7% · 선행PER 5)"
     },
     {
      "t": "035720",
      "name": "카카오",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 65점 (매출성장 6% · 영업이익률 10% · 선행PER 17)"
     },
     {
      "t": "089030",
      "name": "테크윙",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 63점 (매출성장 16% · 영업이익률 17% · 선행PER 10)"
     },
     {
      "t": "007660",
      "name": "이수페타시스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "042700",
      "name": "한미반도체",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "003230",
      "name": "삼양식품",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "247540",
      "name": "에코프로비엠",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "168360",
      "name": "펨트론",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "196170",
      "name": "알테오젠",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     }
    ]
   },
@@ -723,37 +1201,69 @@
     {
      "t": "HKG:0700",
      "name": "텐센트",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": true,
+     "custom": false
     },
     {
      "t": "BABA",
      "name": "알리바바",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "BIDU",
      "name": "바이두",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "HKG:1810",
      "name": "샤오미",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": true,
+     "custom": false
     },
     {
      "t": "NIO",
      "name": "니오",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "BYDDY",
      "name": "BYD",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "HKG:0992",
      "name": "레노버",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": true,
+     "custom": false
     }
    ]
   },
@@ -763,62 +1273,120 @@
     {
      "t": "HOOD",
      "name": "로빈후드",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "BKNG",
      "name": "부킹",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "UBER",
      "name": "우버",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "MCD",
      "name": "맥도날드",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "KO",
      "name": "코카콜라",
-     "status": "보유"
+     "status": "보유",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인) · 현재가 95.98"
     },
     {
      "t": "PEP",
      "name": "펩시코",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "SBUX",
      "name": "스타벅스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "WMT",
      "name": "월마트",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "COST",
      "name": "코스트코",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "NKE",
      "name": "나이키",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "ETR:ADS",
      "name": "아디다스",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false
     },
     {
      "t": "EPA:MC",
      "name": "LVMH",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false
     }
    ]
   },
@@ -828,37 +1396,71 @@
     {
      "t": "JPM",
      "name": "JP모건",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "BAC",
      "name": "뱅크오브아메리카",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "WFC",
      "name": "웰스파고",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "V",
      "name": "비자",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 62점 (재무 일부 미확인)"
     },
     {
      "t": "MA",
      "name": "마스터카드",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 62점 (재무 일부 미확인)"
     },
     {
      "t": "LON:BARC",
      "name": "바클레이즈",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false
     },
     {
      "t": "KB",
      "name": "KB금융",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     }
    ]
   },
@@ -868,52 +1470,102 @@
     {
      "t": "XOM",
      "name": "엑슨모빌",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "CVX",
      "name": "셰브론",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "CCJ",
      "name": "카메코",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "BE",
      "name": "블룸에너지",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "PLUG",
      "name": "플러그파워",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "NEE",
      "name": "넥스트에라",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "ENPH",
      "name": "엔페이즈",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "FSLR",
      "name": "퍼스트솔라",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "SEDG",
      "name": "솔라엣지",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "BEPC",
      "name": "브룩필드 리뉴어블",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     }
    ]
   },
@@ -923,27 +1575,49 @@
     {
      "t": "GM",
      "name": "GM",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "F",
      "name": "포드",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "ETR:VOW3",
      "name": "폭스바겐",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false
     },
     {
      "t": "ETR:BMW",
      "name": "BMW",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false
     },
     {
      "t": "ETR:MBG",
      "name": "메르세데스-벤츠",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false
     }
    ]
   },
@@ -953,47 +1627,91 @@
     {
      "t": "BA",
      "name": "보잉",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "EPA:AIR",
      "name": "에어버스",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": true,
+     "custom": false
     },
     {
      "t": "LMT",
      "name": "록히드마틴",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 62점 (재무 일부 미확인)"
     },
     {
      "t": "NOC",
      "name": "노스롭그루먼",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "LHX",
      "name": "L3해리스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "GE",
      "name": "GE에어로스페이스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "DAL",
      "name": "델타항공",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "FDX",
      "name": "페덱스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "UPS",
      "name": "UPS",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     }
    ]
   },
@@ -1003,32 +1721,62 @@
     {
      "t": "T",
      "name": "AT&T",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "VZ",
      "name": "버라이즌",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "CMCSA",
      "name": "컴캐스트",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 40점 (재무 일부 미확인)"
     },
     {
      "t": "IBM",
      "name": "IBM",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "HPQ",
      "name": "HP",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 44점 (재무 일부 미확인)"
     },
     {
      "t": "PYPL",
      "name": "페이팔",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 62점 (재무 일부 미확인)"
     }
    ]
   },
@@ -1038,38 +1786,72 @@
     {
      "t": "SPCX",
      "name": "스페이스X",
-     "status": "관찰",
-     "note": "11/20 종가 127.79달러로 공모가(135달러) 아래. 선행 PER 수백 배에 대규모 GPU 차입이 겹쳐, 공모가 회복을 확인한 뒤 소액 편입 검토."
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "LUNR",
      "name": "인튜이티브 머신스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "RKLB",
      "name": "로켓랩",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "ASTS",
      "name": "AST 스페이스모바일",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "BKSY",
      "name": "블랙스카이",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "VSAT",
      "name": "비아샛",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "ACHR",
      "name": "아처 에비에이션",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     }
    ]
   },
@@ -1079,62 +1861,122 @@
     {
      "t": "DDD",
      "name": "3D시스템즈",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "SSYS",
      "name": "스트라타시스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "PRLB",
      "name": "프로토랩스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "NNDM",
      "name": "나노디멘션",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "MTLS",
      "name": "머티리얼라이즈",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "SYM",
      "name": "심보틱",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "ARBE",
      "name": "아르베 로보틱스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "CXAI",
      "name": "CXApp",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "EVLV",
      "name": "이볼브",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "SERV",
      "name": "서브 로보틱스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "GNSS",
      "name": "제네시스",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 52점 (재무 일부 미확인)"
     },
     {
      "t": "OSIS",
      "name": "OSI 시스템즈",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     }
    ]
   },
@@ -1144,42 +1986,79 @@
     {
      "t": "STEM",
      "name": "스템",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "QS",
      "name": "퀀텀스케이프",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "BYND",
      "name": "비욘드미트",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": false,
+     "custom": false,
+     "note": "원칙 점수 34점 (재무 일부 미확인)"
     },
     {
      "t": "GLBE",
      "name": "글로벌-e",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 58점 (재무 일부 미확인)"
     },
     {
      "t": "GLOB",
      "name": "글로반트",
-     "status": "중립"
+     "status": "중립",
+     "sel": true,
+     "tradable": true,
+     "tech": true,
+     "custom": false,
+     "note": "원칙 점수 62점 (재무 일부 미확인)"
     },
     {
      "t": "SWX:TEMN",
      "name": "테메노스",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": true,
+     "custom": false
     },
     {
      "t": "CNSX:NURL",
      "name": "뉴럴리",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": true,
+     "custom": false
     },
     {
      "t": "ETR:BAYN",
      "name": "바이엘",
-     "status": "중립"
+     "status": "관찰만",
+     "sel": false,
+     "tradable": false,
+     "tech": false,
+     "custom": false
     }
    ]
   }
@@ -1188,6 +2067,19 @@
   {
    "ts": "2026-11-23T23:40",
    "equity": 9995539
+  },
+  {
+   "ts": "2026-11-24T23:12:08",
+   "equity": 10118713
   }
- ]
+ ],
+ "cash": 5535510.0,
+ "live": {
+  "GOOGL": 6.26,
+  "MSFT": 1.64,
+  "BRK.B": 0.46,
+  "KO": -1.05,
+  "005930": -0.05,
+  "BTC": -0.07
+ }
 }
