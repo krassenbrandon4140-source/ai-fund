@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>24/7 클라우드 무인 AI 모의투자 &amp; 자가학습 모니터</title>
+<style>
+  :root { --bg:#0b0f19; --panel:#111827; --panel2:#161f33; --border:#243049; --text:#f1f5f9; --muted:#94a3b8; --accent:#38bdf8; --green:#10b981; --red:#f43f5e; }
+  * { box-sizing:border-box; margin:0; padding:0; font-family:'Pretendard',-apple-system,sans-serif; }
+  body { background:var(--bg); color:var(--text); padding:18px; }
+  .wrap { max-width:1360px; margin:0 auto; }
+  .top { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:18px; margin-bottom:16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center; }
+  .pill { background:rgba(16,185,129,0.16); color:var(--green); border:1px solid rgba(16,185,129,0.4); padding:4px 12px; border-radius:999px; font-size:0.8rem; font-weight:700; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-bottom:16px; }
+  .card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:15px; }
+  .label { color:var(--muted); font-size:0.8rem; margin-bottom:4px; }
+  .val { font-size:1.38rem; font-weight:800; }
+  .pos { color:var(--green); } .neg { color:var(--red); }
+  .cols { display:grid; grid-template-columns:1.2fr 1fr; gap:16px; }
+  @media(max-width:960px){ .cols{ grid-template-columns:1fr; } }
+  table { width:100%; border-collapse:collapse; font-size:0.84rem; margin-top:8px; }
+  th, td { padding:9px 8px; border-bottom:1px solid var(--border); text-align:left; }
+  th { color:var(--muted); font-size:0.78rem; }
+  .log { background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:11px; margin-top:8px; font-size:0.82rem; }
+  .badge { padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.74rem; }
+  .buy { background:rgba(16,185,129,0.18); color:var(--green); }
+  .sell { background:rgba(244,63,94,0.18); color:var(--red); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h2>☁️ 24/7 클라우드 무인 AI 모의투자 &amp; 300원칙 자가학습 대시보드</h2>
+      <p style="color:var(--muted);font-size:0.84rem;margin-top:4px">브라우저 창을 닫아도, 컴퓨터 전원을 꺼도 클라우드 서버에서 24시간 실시간 시세로 자동 매매·학습합니다.</p>
+    </div>
+    <span class="pill" id="lastSync">클라우드 상태 동기화 중...</span>
+  </div>
+
+  <div class="grid">
+    <div class="card"><div class="label">총 평가자산</div><div class="val" id="eq">10,000,000원</div></div>
+    <div class="card"><div class="label">누적 수익률</div><div class="val" id="ret">+0.00%</div></div>
+    <div class="card"><div class="label">가용 현금 잔고</div><div class="val" id="cash">10,000,000원</div></div>
+    <div class="card"><div class="label">AI 자가학습 진화 에피소드</div><div class="val" id="ep">Ep. 0</div></div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <h3>📊 클라우드 실시간 수익률 추이 &amp; 보유 포트폴리오</h3>
+      <svg id="chart" width="100%" height="220" viewBox="0 0 700 220" style="background:#090d16;border-radius:10px;margin-top:10px"></svg>
+      <table>
+        <thead><tr><th>종목</th><th>핵심산업</th><th>수량</th><th>평균단가</th><th>현재가</th><th>수익률</th></tr></thead>
+        <tbody id="posBody"></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>🧠 클라우드 AI 매수·매도 및 300원칙 자가학습 기록</h3>
+      <div id="logBox" style="max-height:520px;overflow-y:auto"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function loadCloudState() {
+  try {
+    const res = await fetch("./portfolio_state.json?t=" + Date.now());
+    const s = await res.json();
+    const holdings = Object.values(s.holdings || {});
+    const stockVal = holdings.reduce((acc, h) => acc + h.qty * h.last_price_krw, 0);
+    const eq = (s.cash_krw || 10000000) + stockVal;
+    const ret = ((eq - 10000000) / 10000000) * 100;
+    const w = s.learning_weights || {};
+
+    document.getElementById("lastSync").textContent = "마지막 클라우드 체결: " + (s.last_updated || "대기 중");
+    document.getElementById("eq").textContent = Math.round(eq).toLocaleString("ko-KR") + "원";
+    const retEl = document.getElementById("ret");
+    retEl.textContent = (ret >= 0 ? "+" : "") + ret.toFixed(2) + "%";
+    retEl.className = "val " + (ret >= 0 ? "pos" : "neg");
+    document.getElementById("cash").textContent = Math.round(s.cash_krw).toLocaleString("ko-KR") + "원";
+    document.getElementById("ep").textContent = `Ep. ${w.learning_episodes || 0} (승 ${w.win_count || 0} / 패 ${w.loss_count || 0})`;
+
+    document.getElementById("posBody").innerHTML = holdings.length === 0
+      ? `<tr><td colspan="6" style="color:var(--muted);text-align:center">보유 종목 없음</td></tr>`
+      : holdings.map(h => {
+          const p = ((h.last_price_krw - h.avg_price_krw) / h.avg_price_krw) * 100;
+          return `<tr><td><b>${h.display}</b></td><td>${h.core8 || "-"}</td><td>${h.qty.toFixed(2)}</td><td>${Math.round(h.avg_price_krw).toLocaleString()}원</td><td>${Math.round(h.last_price_krw).toLocaleString()}원</td><td class="${p>=0?"pos":"neg"}">${p>=0?"+":""}${p.toFixed(2)}%</td></tr>`;
+        }).join("");
+
+    document.getElementById("logBox").innerHTML = (s.trade_logs || []).map(l => `
+      <div class="log">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <span><span class="badge ${l.action==="BUY"?"buy":"sell"}">${l.action}</span> <b>${l.ticker}</b></span>
+          <span style="color:var(--muted);font-size:0.76rem">${l.time}</span>
+        </div>
+        <div style="color:#cbd5e1">${l.rationale}</div>
+      </div>
+    `).join("");
+
+    const hist = s.equity_history || [];
+    if (hist.length >= 2) {
+      const vals = hist.map(x => x.return_pct);
+      const minV = Math.min(-1, ...vals), maxV = Math.max(1, ...vals), rng = (maxV - minV) || 1;
+      const pts = hist.map((d, i) => `${20 + (i/(hist.length-1))*660},${200 - ((d.return_pct-minV)/rng)*180}`).join(" ");
+      document.getElementById("chart").innerHTML = `<polyline fill="none" stroke="#10b981" stroke-width="3" points="${pts}" />`;
+    }
+  } catch (e) {
+    document.getElementById("lastSync").textContent = "초기 실행 대기 중 (GitHub Actions 첫 실행 후 자동 표시)";
+  }
+}
+loadCloudState();
+setInterval(loadCloudState, 60000);
+</script>
+</body>
+</html>
