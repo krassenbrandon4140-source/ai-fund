@@ -243,6 +243,7 @@ class Engine:
         self.last_daily = 0
         self.quotes = {}
         self.fx = None
+        self.diag = {}
         self.scores = {}
         self.stop = False
 
@@ -317,6 +318,14 @@ class Engine:
             self.custom = [c for c in self.custom if c["y"] != a["y"]]
             U.remove_custom(t); self.sel.discard(t)
             self._save_selection(); self.rebuild_watch(); self._save()
+
+    def reload_selection(self):
+        """다른 곳(GitHub 편집 등)에서 바뀐 관찰 대상 파일을 다시 읽는다."""
+        with self.lock:
+            before = set(self.sel)
+            self._load_selection()
+            if self.sel - before:
+                self.last_daily = 0
 
     def active(self):
         """시세·점수를 계산할 종목: 선택한 종목 + 보유 종목."""
@@ -532,7 +541,11 @@ class Engine:
         vix, regime, band = self.regime()
         cash_w = S["cash"] / eq
         today = self._today_trades()
+        self.diag = dict(cash_pct=round(cash_w * 100, 1), band=[round(band[0] * 100), round(band[1] * 100)],
+                         quotes=len(self.quotes), fresh=sum(1 for y in self.scores if self.fresh(y)),
+                         scored=len(self.scores), candidates=0, block="")
         if len(today) >= cfg["max_trades_per_day"]:
+            self.diag["block"] = "오늘 거래 한도 도달"
             return []                                   # 원칙 288
         if today and (now_kst() - datetime.fromisoformat(f"{today[-1]['date']}T{today[-1]['time']}").replace(tzinfo=KST)).total_seconds() < cfg["min_gap_sec"]:
             return []                                   # 원칙 230: 시간 분산
@@ -587,6 +600,7 @@ class Engine:
         # 3) 매수 판단 — 원칙 3·15·39·230·231·233·234·29·249
         target_cash = band[1] if cash_w > band[1] else None
         if cash_w <= band[1]:
+            self.diag["block"] = "현금 비중이 목표 범위 안"
             return done
         investable = eq * (1 - (band[0] + band[1]) / 2)
         cands = []
@@ -618,21 +632,31 @@ class Engine:
             if w < cfg["btc_target"] - 0.01:
                 a = BY_T["BTC"]; q = self.quotes["BTC-USD"]
                 cands.append((60, "BTC-USD", a, dict(score=None, notes=[]), q, 0, cfg["btc_target"], w, 0.05))
+        self.diag["candidates"] = len(cands)
         if not cands:
+            self.diag["block"] = "매수 조건(점수·추격 금지·비중)을 만족하는 종목 없음"
             return done
         cands.sort(key=lambda x: -x[0])
-        _, y, a, s, q, day, tgt, w, limit = cands[0]
-        fx = self.fx_of(market_of(y)[1])
-        spend = min(eq * tgt / cfg["tranches"], eq * (tgt - w), S["cash"] - eq * band[0])
-        unit = q["px"] * fx * (1 + cfg["fee_rate"])
-        if a["t"] == "BTC":
-            qty = round(spend / unit, 5)
-            if qty * unit < 50000:
-                return done
-        else:
-            qty = math.floor(spend / unit)
-            if qty < 1:
-                return done
+        pick = None
+        for _, y, a, s, q, day, tgt, w, limit in cands:   # 1주도 못 사는 비싼 종목은 건너뛰고 다음 후보로
+            fx = self.fx_of(market_of(y)[1])
+            room = min(eq * (tgt - w), S["cash"] - eq * band[0])
+            spend = min(eq * tgt / cfg["tranches"], room)
+            unit = q["px"] * fx * (1 + cfg["fee_rate"])
+            if a["t"] == "BTC":
+                qty = round(spend / unit, 5)
+                if qty * unit >= 50000:
+                    pick = (y, a, s, q, day, tgt, w, qty); break
+            else:
+                qty = math.floor(spend / unit)
+                if qty < 1 and unit <= room:
+                    qty = 1                                 # 1주가 1회분보다 비싸도 목표 비중 안이면 1주
+                if qty >= 1:
+                    pick = (y, a, s, q, day, tgt, w, qty); break
+        if not pick:
+            self.diag["block"] = "후보 종목이 모두 1주 가격이 남은 매수 여력보다 비쌈"
+            return done
+        y, a, s, q, day, tgt, w, qty = pick
         tranche_no = 1 + len([t for t in S["trades"] if t["t"] == a["t"] and t["side"] == "BUY"])
         notes = " · ".join(s.get("notes") or []) or "재무 데이터 일부 미확인"
         ind = self.ind.get(y)
@@ -702,6 +726,7 @@ class Engine:
         S["meta"]["updated_at"] = t.isoformat(timespec="seconds")
         S["meta"]["day"] = len(S["history"])
         S["meta"]["feed"] = self.feed.name
+        S["meta"]["diag"] = self.diag
         S["meta"]["demo"] = self.feed.demo
         S["meta"]["asof"] = dict(feed=f"시세: {self.feed.name}", tick=f"마지막 점검 {t.strftime('%m/%d %H:%M:%S')}",
                                  fx=f"원/달러 {self.fx_of('USD'):,.1f}원")

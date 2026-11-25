@@ -132,7 +132,7 @@ footer{background:var(--soft);font-size:14px;color:var(--sub)}
 </head>
 <body>
 <div class="top"><div class="wrap">
- <div class="logo"><i></i><span id="fname">AI 펀드 1000</span><span class="chip" id="live"><i class="dot"></i>연결 중</span></div>
+ <div class="logo"><i></i><span id="fname">AI 펀드 1억</span><span class="chip" id="live"><i class="dot"></i>연결 중</span></div>
  <nav class="nav"><a href="#hero">총자산</a><a href="#market">시장 판단</a><a href="#curve">수익률</a><a href="#hold">보유 종목</a><a href="#log">매매 일지</a><a href="#watch">관심목록</a><a href="#rules">운용 원칙</a><a href="#principles">원칙 300</a></nav>
 </div></div>
 
@@ -215,7 +215,7 @@ footer{background:var(--soft);font-size:14px;color:var(--sub)}
 </main>
 
 <footer class="band"><div class="wrap">
- <p style="margin:0 0 6px"><b style="color:var(--ink)">이 페이지는 가상의 1,000만원으로 하는 모의투자 기록이다.</b> 실제 돈은 움직이지 않으며, 매수·매도 이유는 AI가 공개 뉴스와 시세를 보고 내린 판단일 뿐 투자 권유가 아니다. 체결가는 엔진이 판단한 순간의 실시간 시세(1분 단위)이며, 실제 주문의 호가·체결과는 다를 수 있다.</p>
+ <p style="margin:0 0 6px"><b style="color:var(--ink)">이 페이지는 가상의 1억 원으로 하는 모의투자 기록이다.</b> 실제 돈은 움직이지 않으며, 매수·매도 이유는 AI가 공개 뉴스와 시세를 보고 내린 판단일 뿐 투자 권유가 아니다. 체결가는 엔진이 판단한 순간의 실시간 시세(1분 단위)이며, 실제 주문의 호가·체결과는 다를 수 있다.</p>
  <p style="margin:0" id="foot"></p>
 </div></footer>
 
@@ -231,14 +231,17 @@ const qty=q=>Number.isInteger(q)?q.toLocaleString('ko-KR'):String(q);
 let S=null,range='all',stFilter='전체';
 
 let PR=null,lastU='';
-fetch('data/principles.json').then(r=>r.ok?r.json():null).then(d=>{PR=d;principles()}).catch(()=>{});
-function load(){fetch('data/portfolio.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
+// GitHub Pages에서는 저장소의 최신 기록(raw)을 직접 읽어 2분 단위 점검 결과를 바로 보여 준다
+const GH=(()=>{const m=location.hostname.match(/^([^.]+)\.github\.io$/),r=location.pathname.split('/').filter(Boolean)[0];return m&&r?`https://raw.githubusercontent.com/${m[1]}/${r}/main/`:''})();
+const src=f=>GH?GH+f+'?t='+Date.now():f;
+fetch(src('data/principles.json')).then(r=>r.ok?r.json():null).then(d=>{PR=d;principles()}).catch(()=>{});
+function load(){fetch(src('data/portfolio.json'),{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
  const c=$('#live');c.className='chip '+(d.meta.demo?'demo':'on');c.innerHTML=`<i class="dot"></i>${d.meta.demo?'데모 시세':d.meta.host==='actions'?'자동 운용 중 · 마지막 점검':'실시간'} · ${esc((d.meta.updated_at||'').slice(11,19))}`;
  if(d.meta.updated_at===lastU)return;lastU=d.meta.updated_at;
  const open=[...document.querySelectorAll('details[data-k][open]')].map(x=>x.dataset.k);S=d;render();
  open.forEach(k=>{const e=document.querySelector(`details[data-k="${k}"]`);if(e)e.open=true})
 }).catch(()=>{const c=$('#live');c.className='chip';c.innerHTML='<i class="dot"></i>엔진 연결 끊김';if(!S)$('#app').innerHTML='<div class="err">운용 엔진에 연결하지 못했다. 프로그램(app.py)이 실행 중인지 확인하자.</div>'})}
-load();setInterval(load,10000);
+load();setInterval(load,GH?30000:10000);
 
 function render(){
  const m=S.meta,h=S.history,last=h[h.length-1],prev=h.length>1?h[h.length-2]:null;
@@ -275,7 +278,7 @@ function treemap(last){
 }
 function market(){
  const k=S.market;$('#regime').textContent=k.regime;$('#needle').style.left=`calc(${Math.max(0,Math.min(100,k.score))}% - 2px)`;
- $('#headline').textContent=k.headline;$('#summary').textContent=k.summary;
+ $('#headline').textContent=k.headline+(S.meta.diag&&S.meta.diag.block?` (최근 점검: 매매 없음 — ${S.meta.diag.block})`:'');$('#summary').textContent=k.summary;
  $('#ind').innerHTML=k.indicators.map(i=>`<div><small>${esc(i.k)}</small><b>${esc(i.v)}</b><small class="${cls(i.c)}">${pct(i.c)}</small> <small>${esc(i.d)}</small></div>`).join('');
 }
 const SER=[{k:'fund',n:'AI 펀드',c:'var(--ver)',w:3.5},{k:'kospi',n:'코스피',c:'var(--sub)',w:1.6},{k:'spx',n:'S&P 500',c:'var(--ink)',w:1.6,dash:'6 4'},{k:'ndx',n:'나스닥',c:'var(--down)',w:1.6,dash:'2 3'}];

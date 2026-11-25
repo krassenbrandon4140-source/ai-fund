@@ -3,11 +3,11 @@
   python app.py          실제 시세로 실시간 모의투자
   python app.py --demo   가짜 시세로 화면과 규칙만 시험
 """
-import argparse, json, logging, os, sys, threading, webbrowser
+import argparse, json, logging, os, subprocess, sys, threading, time, webbrowser
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from engine import Engine, HERE, load_config
+from engine import Engine, HERE, load_config, market_open
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 ENGINE = None
@@ -61,18 +61,47 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
 
+def git_sync():
+    """GitHub에서 돌 때: 운용 기록을 저장소에 올리고, 사용자가 바꾼 선택을 받아온다."""
+    def run(*a):
+        return subprocess.run(["git", *a], cwd=HERE, capture_output=True, text=True)
+    run("add", "data/portfolio.json", "data/fundamentals_cache.json")
+    if run("diff", "--cached", "--quiet").returncode != 0:
+        stamp = time.strftime("%m/%d %H:%M", time.gmtime(time.time() + 9 * 3600))
+        run("commit", "-m", f"운용 기록 {stamp}")
+    r = run("pull", "--rebase", "-X", "theirs", "origin", "main")
+    if r.returncode != 0:
+        logging.warning("git pull 실패: %s", r.stderr[-300:]); run("rebase", "--abort")
+    r = run("push", "origin", "HEAD:main")
+    if r.returncode != 0:
+        logging.warning("git push 실패: %s", r.stderr[-300:])
+
+
 def main():
     global ENGINE
     ap = argparse.ArgumentParser()
     ap.add_argument("--demo", action="store_true", help="가짜 시세로 시험 실행")
     ap.add_argument("--no-browser", action="store_true")
     ap.add_argument("--once", action="store_true", help="한 번만 점검하고 종료(시험용)")
+    ap.add_argument("--loop-minutes", type=float, default=0, help="이 시간 동안 반복 점검(GitHub 실행용)")
+    ap.add_argument("--git-sync", action="store_true", help="점검마다 저장소에 기록 저장")
     args = ap.parse_args()
     ENGINE = Engine(demo=args.demo)
-    if args.once:
+    if args.once or args.loop_minutes:
+        start = time.time()
         ENGINE.refresh_fundamentals(budget=40)
-        tr = ENGINE.tick()
-        print("거래", len(tr), "건 · 총자산", ENGINE.equity()[0])
+        while True:
+            t0 = time.time()
+            tr = ENGINE.tick()
+            print(time.strftime("%H:%M:%S"), "거래", len(tr), "건 · 총자산", ENGINE.equity()[0], "·", ENGINE.diag, flush=True)
+            if args.git_sync:
+                git_sync(); ENGINE.reload_selection()
+            stocks_open = market_open("KR") or market_open("US")
+            left = args.loop_minutes * 60 - (time.time() - start)
+            wait = load_config().get("cloud_tick_seconds", 120)
+            if args.once or not stocks_open or left < wait + 90:
+                break
+            time.sleep(max(5, wait - (time.time() - t0)))
         return
     port = load_config()["port"]
     threading.Thread(target=ENGINE.run, daemon=True).start()
